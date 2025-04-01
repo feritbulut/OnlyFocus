@@ -1,0 +1,344 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="OnlyFocus.MainPage"
+             Shell.NavBarIsVisible="False"
+             BackgroundImageSource="backgroundimage1.jpg">
+    
+        <VerticalStackLayout>
+        <Label Text="KEEP FOCUS."
+           VerticalOptions="Center"
+           HorizontalOptions="Center"
+           FontSize="40"
+           FontAttributes="Bold"
+           TextColor="White"
+           Margin="0,30,0,0"/>
+
+        <Frame BackgroundColor="#60FFFFFF"
+           WidthRequest="350" 
+           HeightRequest="135" 
+           BorderColor="#10FFFFFF"
+           HorizontalOptions="Center"
+           VerticalOptions="Center"
+           Padding="10"
+           Margin="0,10,0,0">
+
+            <VerticalStackLayout Spacing="10">
+                <HorizontalStackLayout HorizontalOptions="Center" Spacing="35">
+
+                    <ImageButton Source="minus.png"
+                    x:Name="DecreaseButton"
+                    WidthRequest="45"
+                    HeightRequest="45"
+                    Clicked="DecreaseMinute"/>
+
+                    <Label x:Name="TimerLabel"
+                   Text="00:00"
+                   FontSize="35"
+                   HorizontalOptions="Center"
+                   TextColor="White"
+                   VerticalOptions="Center"
+                   FontAttributes="Bold"/>
+
+                    <ImageButton  Source="plussymbol.png"
+                          x:Name="IncreaseButton"
+                          WidthRequest="45"
+                          HeightRequest="45"
+                          Clicked="IncreaseMinute"/>
+
+                </HorizontalStackLayout>
+                <HorizontalStackLayout HorizontalOptions="Center" Spacing="50" Margin="0,5,0,0">
+                    <Button Text="Start" Clicked="StartTimer"
+                        BackgroundColor="DarkOliveGreen"/>
+
+                    <Button Text="Reset" Clicked="ResetTimer"
+                        BackgroundColor="DarkOliveGreen"/>
+                </HorizontalStackLayout>
+            </VerticalStackLayout>
+
+        </Frame>
+
+
+        <Grid ColumnSpacing="35" Margin="10,0,0,0">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition Width="Auto"/>
+            </Grid.ColumnDefinitions>
+
+            <Grid Grid.Row="0" Grid.Column="0">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                </Grid.RowDefinitions>
+                <Image Source="heavyrain.png"
+                                       HeightRequest="60"
+                                       Grid.Row="0"
+                                       Margin="0,30,0,0"/>
+
+                <Slider x:Name="heavyrain_VolumeSlider"
+                                Maximum="10"
+                                Minimum="0"
+                                Value="0"
+                                ThumbColor="DarkOliveGreen"
+                                MaximumTrackColor="LightGrey"
+                                MinimumTrackColor="White"
+                                WidthRequest="100"
+                                HeightRequest="10"
+                                Grid.Row="1"
+                                Margin="0,10,0,0"
+                                ValueChanged="rainsoundchanged"/>
+
+            </Grid>
+            <Grid Grid.Row="1" Grid.Column="0">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                </Grid.RowDefinitions>
+                <Image Source="bird.png"
+                               HeightRequest="60"
+                               Grid.Row="0"
+                               Margin="0,30,0,0"/>
+
+                <Slider x:Name="bird_VolumeSlider"
+                                Maximum="10"
+                                Minimum="0"
+                                Value="0"
+                                ThumbColor="DarkOliveGreen"
+                                MaximumTrackColor="LightGrey"
+                                MinimumTrackColor="White"
+                                WidthRequest="100"
+                                HeightRequest="10"
+                                Grid.Row="1"
+                                Margin="0,10,0,0"
+                                ValueChanged="birdsoundchanged"/>
+
+            </Grid>
+            <Grid Grid.Row="0" Grid.Column="1">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                </Grid.RowDefinitions>
+                <Image Source="wave.png"
+                               HeightRequest="60"
+                               Grid.Row="0"
+                               Margin="0,30,0,0"/>
+
+                <Slider x:Name="waterwaves_VolumeSlider"
+                                Maximum="10"
+                                Minimum="0"
+                                Value="0"
+                                ThumbColor="DarkOliveGreen"
+                                MaximumTrackColor="LightGrey"
+                                MinimumTrackColor="White"
+                                WidthRequest="100"
+                                HeightRequest="10"
+                                Grid.Row="1"
+                                Margin="0,10,0,0"
+                                ValueChanged="wavesoundchanged"/>
+
+            </Grid>
+            <Grid Grid.Row="0" Grid.Column="2">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                </Grid.RowDefinitions>
+                <Image Source="wind1.png"
+                               HeightRequest="60"
+                               Grid.Row="0"
+                               Margin="0,30,0,0"/>
+
+                <Slider x:Name="wind_VolumeSlider"
+                                Maximum="10"
+                                Minimum="0"
+                                Value="0"
+                                ThumbColor="DarkOliveGreen"
+                                MaximumTrackColor="LightGrey"
+                                MinimumTrackColor="White"
+                                WidthRequest="100"
+                                HeightRequest="10"
+                                Grid.Row="1"
+                                Margin="0,10,0,0"
+                                ValueChanged="windsoundchanged"/>
+
+            </Grid>
+            <Grid Grid.Row="1" Grid.Column="1">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                </Grid.RowDefinitions>
+                <Image Source="singingbowl.png"
+                               HeightRequest="60"
+                               Grid.Row="0"
+                               Margin="0,30,0,0"/>
+
+                <Slider x:Name="bowl_VolumeSlider"
+                                Maximum="10"
+                                Minimum="0"
+                                Value="0"
+                                ThumbColor="DarkOliveGreen"
+                                MaximumTrackColor="LightGrey"
+                                MinimumTrackColor="White"
+                                WidthRequest="100"
+                                HeightRequest="10"
+                                Grid.Row="1"
+                                Margin="0,10,0,0"
+                                ValueChanged="bowlsoundchanged"/>
+
+            </Grid>
+            <Grid Grid.Row="1" Grid.Column="2">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                </Grid.RowDefinitions>
+                <Image Source="grass.png"
+                               HeightRequest="60"
+                               Grid.Row="0"
+                               Margin="0,30,0,0"/>
+
+                <Slider x:Name="grass_VolumeSlider"
+                                Maximum="10"
+                                Minimum="0"
+                                Value="0"
+                                ThumbColor="DarkOliveGreen"
+                                MaximumTrackColor="LightGrey"
+                                MinimumTrackColor="White"
+                                WidthRequest="100"
+                                HeightRequest="10"
+                                Grid.Row="1"
+                                Margin="0,10,0,0"
+                                ValueChanged="grasssoundchanged"/>
+            </Grid>
+            <Grid Grid.Row="2" Grid.Column="0">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                </Grid.RowDefinitions>
+                <Image Source="river.png"
+                               HeightRequest="60"
+                               Grid.Row="0"
+                               Margin="0,30,0,0"/>
+
+                <Slider x:Name="river_VolumeSlider"
+                                Maximum="10"
+                                Minimum="0"
+                                Value="0"
+                                ThumbColor="DarkOliveGreen"
+                                MaximumTrackColor="LightGrey"
+                                MinimumTrackColor="White"
+                                WidthRequest="100"
+                                HeightRequest="10"
+                                Grid.Row="1"
+                                Margin="0,10,0,0"
+                                ValueChanged="riversoundchanged"/>
+            </Grid>
+            <Grid Grid.Row="2" Grid.Column="1">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                </Grid.RowDefinitions>
+                <Image Source="fire.png"
+                               HeightRequest="60"
+                               Grid.Row="0"
+                               Margin="0,30,0,0"/>
+
+                <Slider x:Name="fire_VolumeSlider"
+                                Maximum="10"
+                                Minimum="0"
+                                Value="0"
+                                ThumbColor="DarkOliveGreen"
+                                MaximumTrackColor="LightGrey"
+                                MinimumTrackColor="White"
+                                WidthRequest="100"
+                                HeightRequest="10"
+                                Grid.Row="1"
+                                Margin="0,10,0,0"
+                                ValueChanged="firesoundchanged"/>
+            </Grid>
+            <Grid Grid.Row="2" Grid.Column="2">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                </Grid.RowDefinitions>
+                <Image Source="signal.png"
+                               HeightRequest="60"
+                               Grid.Row="0"
+                               Margin="0,30,0,0"/>
+
+                <Slider x:Name="signal_VolumeSlider"
+                                Maximum="10"
+                                Minimum="0"
+                                Value="0"
+                                ThumbColor="DarkOliveGreen"
+                                MaximumTrackColor="LightGrey"
+                                MinimumTrackColor="White"
+                                WidthRequest="100"
+                                HeightRequest="10"
+                                Grid.Row="1"
+                                Margin="0,10,0,0"
+                                ValueChanged="signalsoundchanged"/>
+            </Grid>
+        </Grid>
+
+        <Border WidthRequest="350"
+                HeightRequest="200"
+                StrokeThickness="2"
+                Stroke="White"
+                Margin="0,10,0,0"
+                StrokeShape="RoundRectangle 20">
+
+
+            <HorizontalStackLayout>
+                <Image x:Name="treeImage"
+                       Source="tree.png"
+                       WidthRequest="150"
+                       HeightRequest="130"
+                       Margin="10,0,0,0"/>
+
+                <VerticalStackLayout Margin="5,0,0,0">
+                <Label TextColor="White"
+                       Margin="27,45,0,0"
+                       FontAttributes="Bold"
+                       FontSize="20">
+                    <Label.FormattedText>
+                        <FormattedString>
+                            <Span TextColor="white" Text=" LO-FI"/>
+                            <Span Text="&#x0a;"/>
+                            <Span TextColor="white" Text="Music"/>
+                        </FormattedString>
+                    </Label.FormattedText>
+                </Label>
+
+                    <ImageButton Source="play1.png"
+                                 HeightRequest="30"
+                                 WidthRequest="30"
+                                 HorizontalOptions="Center"
+                                 Margin="30,10,0,0"
+                                 Clicked="musicPlay"/>
+                </VerticalStackLayout>
+
+                <Slider x:Name="musicslider"
+                    Rotation="-90"
+                    WidthRequest="160"
+                    Margin="-17,0,0,0"
+                    MaximumTrackColor="LightGray"
+                    MinimumTrackColor="white"
+                    ThumbImageSource="volumeup.png"
+                    Value="5"
+                    Maximum="10"
+                    Minimum="0"
+                    VerticalOptions="Center"
+                    ValueChanged="musicvalue">
+                
+            </Slider>
+            </HorizontalStackLayout>
+        </Border>
+
+    </VerticalStackLayout>
+    
+</ContentPage>
